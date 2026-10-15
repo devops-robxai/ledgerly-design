@@ -1,0 +1,28 @@
+{
+  "name": "Ledgerly design",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "22"
+    }
+  },
+  "forwardPorts": [43175, 43176],
+  "portsAttributes": {
+    "43175": {
+      "label": "Ledgerly design app",
+      "onAutoForward": "notify"
+    },
+    "43176": {
+      "label": "Ledgerly design runbook",
+      "onAutoForward": "notify"
+    }
+  },
+  "postCreateCommand": "bash -c 'if ! command -v make >/dev/null 2>&1; then sudo apt-get update -qq && sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq make; fi && npm install'",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint"
+      ]
+    }
+  }
+}
