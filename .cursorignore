@@ -1,0 +1,7 @@
+# Keep the presenter script and the answer key out of Agent context.
+# The runbook page still reads RUNBOOK.md from disk.
+# The MCP example stays visible so the project-scope prompt can read it.
+RUNBOOK.md
+README.md
+reference/*
+!reference/cursor-mcp.json.example
